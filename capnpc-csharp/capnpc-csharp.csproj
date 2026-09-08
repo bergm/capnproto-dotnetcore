@@ -2,7 +2,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <UseAppHost>true</UseAppHost>
-    <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+    <TargetFramework>net10.0</TargetFramework>
     <RootNamespace>CapnpC</RootNamespace>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>capnpc-csharp</ToolCommandName>

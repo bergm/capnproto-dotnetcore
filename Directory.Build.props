@@ -7,7 +7,7 @@
     <Configurations>Debug;Release</Configurations>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
-    <LangVersion>13.0</LangVersion>
+    <LangVersion>14.0</LangVersion>
     <NoWarn>$(NoWarn);CS8981</NoWarn>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>

@@ -117,7 +117,7 @@ public abstract class Skeleton<T> : RefCountingSkeleton, IMonoSkeleton
         CancellationToken cancellationToken = default
     )
     {
-        if (InterfaceId != InterfaceId)
+        if (InterfaceId != interfaceId)
         {
             throw new NotImplementedException("Wrong interface id");
         }
