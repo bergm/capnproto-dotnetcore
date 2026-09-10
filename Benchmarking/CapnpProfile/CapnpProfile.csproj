@@ -12,6 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="../EchoServiceCapnp/Protos/Echo.capnp.cs" Link="Protos/Echo.capnp.cs" />
     <ProjectReference Include="../../Capnp.Net.Runtime/Capnp.Net.Runtime.csproj" />
     <ProjectReference Include="../../CapnpC.CSharp.MsBuild.Generation/CapnpC.CSharp.MsBuild.Generation.csproj" />
   </ItemGroup>

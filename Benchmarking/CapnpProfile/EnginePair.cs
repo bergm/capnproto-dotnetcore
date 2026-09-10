@@ -26,6 +26,9 @@ namespace CapnpProfile
                 }
             }
 
+            // Frames are forwarded immediately; there is nothing to flush.
+            public void Flush() { }
+
             public void Forward(WireFrame frame)
             {
                 if (_dismissed)

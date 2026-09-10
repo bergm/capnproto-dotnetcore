@@ -31,7 +31,7 @@ public class TcpRpcInterop : TestBase
         catch (Win32Exception exception) when (exception.ErrorCode == 2 || exception.ErrorCode == 3)
         {
             Assert.Fail(
-                $"Did not find test executable {processStartInfo.FileName}. Did you build CapnpCompatTest.sln in Release configuration?"
+                $"Did not find test executable {processStartInfo.FileName}. Did you build CapnpCompatTest.slnx in Release configuration?"
             );
         }
         catch (Exception exception)
