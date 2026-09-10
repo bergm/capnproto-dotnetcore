@@ -1,8 +1,8 @@
 # capnproto-dotnetcore [![Build status](https://ci.appveyor.com/api/projects/status/tx4jjl2etiqve2xg/branch/master?svg=true)](https://ci.appveyor.com/project/c80k/capnproto-dotnetcore/branch/master) [![Coverage Status](https://coveralls.io/repos/github/c80k/capnproto-dotnetcore/badge.svg)](https://coveralls.io/github/c80k/capnproto-dotnetcore)
 
-A Cap'n Proto implementation for .NET Standard 2.0 (credits to [lostinplace](https://github.com/lostinplace)) and .NET Core.
+A Cap'n Proto implementation for .NET 10, written in C# 14. Credits to [lostinplace](https://github.com/lostinplace) and the other contributors.
 
-["Cap'n Proto is an insanely fast data interchange format and capability-based RPC system."](https://capnproto.org/) Whilst the original implementation is written in C++ there are several ports to other languages. This is a C# implementation for .NET Core.
+["Cap'n Proto is an insanely fast data interchange format and capability-based RPC system."](https://capnproto.org/) Whilst the original implementation is written in C++ there are several ports to other languages. This is a C# implementation for .NET 10.
 
 Disclaimer: Neither this project nor its author are affiliated with Cap'n Proto. This is just yet another independent implementation of the specification. The following sections assume that you are familiar with [Cap'n Proto](https://capnproto.org/) and probably its [GitHub project](https://github.com/capnproto/capnproto).
 
@@ -29,7 +29,7 @@ Install-Package CapnpC.CSharp.MsBuild.Generation
 
 ### Code generator back end: dotnet tool
 
-The C# code generator back end is available as dotnet tool. It requires a .NET Core 3.1 (or higher) runtime or SDK (type `dotnet` at command line prompt to check whether you already have one). This is the recommended variant. To install it globally, type
+The C# code generator back end is available as dotnet tool. The version built from this repository requires the .NET 10 runtime or SDK. This is the recommended variant. To install it globally, type
 
 ```
 dotnet tool install capnpc-csharp --global
@@ -55,7 +55,9 @@ Install-Package Capnp.Net.Runtime
 
 ## Getting started: Developers
 
-For building from scratch you will need Visual Studio ≥ 2019 (e.g. Community Edition) with suitable workloads for C# / .NET Core (currently .NET Core 2.1) development. For the test suite, you will also need the C++ native workload, [vcpkg](https://github.com/microsoft/vcpkg) and Cap'n Proto release 0.7.0:
+Build with the .NET 10 SDK selected by `global.json` (currently 10.0.400). All managed projects target `net10.0` and use C# 14. The test projects use MSTest SDK 4.4.0.
+
+For native interoperability tests, install a C++ toolchain and the Cap'n Proto tools and libraries. On Windows, use the Visual C++ workload and [vcpkg](https://github.com/microsoft/vcpkg):
 
 ```
 vcpkg install capnproto
@@ -63,15 +65,15 @@ vcpkg install capnproto
 
 Solution/project structure is as follows:
 - `Capnp.Net.slnx` contains these projects:
-  * `Capnp.Net.Runtime` is the runtime implementation, a multi-target assembly.
-  * `CapnpC.CSharp.Generator` contains the generator backend logic for C# language. It is also a multi-target (.NET Standard 2.0 + .NET Core 2.1) assembly.
-  * `capnpc-csharp` is the command line-based generator backend (a .NET Core 2.1 application).
+  * `Capnp.Net.Runtime` is the runtime implementation for .NET 10.
+  * `CapnpC.CSharp.Generator` contains the C# generator backend logic and targets .NET 10.
+  * `capnpc-csharp` is the command-line generator backend, targeting .NET 10.
   * `CapnpC.CSharp.MsBuild.Generation` provides the MSBuild integration for the generator backend.
   * `Capnp.Net.Runtime.Tests` is an MS test assembly, containing - you guessed it - the test suite.
   * `CapnpC.CSharp.Generator.Tests` contains the generator backend test suite.
   * `CapnpC.CSharp.MsBuild.Generation.Tests` contains tests for `CapnpC.CSharp.MsBuild.Generation`.
-- `CapnpCompatTest.slnx` compiles to a native x86 executable which depends on the original Cap'n Proto C++ implementation. It is (partially) required by the test suite for interoperability testing.
-- `MsBuildGenerationTest\MsBuildGenerationTest.slnx` is a test solution/project for MSBuild integration.
+- `CapnpCompatTest.slnx` builds the native interoperability executable which depends on the original Cap'n Proto C++ implementation. It is (partially) required by the test suite for interoperability testing.
+- `MsBuildGenerationTest\MsBuildGenerationTest.slnx` tests MSBuild integration using the local runtime and generator projects by default. Set `PackageReferenceVersion` explicitly to test published packages instead.
 
 ## Features
 

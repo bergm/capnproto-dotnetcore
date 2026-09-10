@@ -484,3 +484,6 @@ $RECYCLE.BIN/
 *.swp
 globalPackages
 /CapnpCompatTest/CapnpCompatTest
+
+# Obsolete generated deployment output
+/chocolatey/deploy/

@@ -7,7 +7,7 @@
     <PackageId>Capnp.Net.Runtime</PackageId>
     <PackageOutputPath>..\bin\$(Configuration)</PackageOutputPath>
     <Authors>Christian Köllner and contributors</Authors>
-    <Description>A Cap'n Proto implementation for .NET Standard &amp; Core</Description>
+    <Description>A Cap'n Proto implementation for .NET 10</Description>
     <Product>capnproto-dotnetcore</Product>
     <Copyright>Christian Köllner and contributors</Copyright>
     <PackageLicenseFile></PackageLicenseFile>

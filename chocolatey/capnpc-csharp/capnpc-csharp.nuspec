@@ -11,11 +11,11 @@
     <licenseUrl>https://github.com/c80k/capnproto-dotnetcore/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/c80k/capnproto-dotnetcore</projectUrl>
     <title>[Deprecated] capnpc-csharp (Install)</title>
-    <description>Cap'n Proto C# code generator backend, portable .NET Core 2.1
-    This package is deprecated now. It was converted to a .NET Core CLI tool which is now hosted here: https://www.nuget.org/packages/capnpc-csharp
+    <description>Deprecated Chocolatey package for the Cap'n Proto C# code generator backend.
+    This package is deprecated now. It was converted to a .NET CLI tool which is now hosted here: https://www.nuget.org/packages/capnpc-csharp
     To install, type: dotnet tool install -g capnpc-csharp
     </description>
-    <summary>Cap'n Proto C# code generator backend. This is the portable variant which depends on .NET Core 2.1 (as opposed to capnpc-csharp-win-x86)</summary>
+    <summary>Deprecated package. Install the capnpc-csharp .NET tool instead.</summary>
     <copyright>Christian Köllner and contributors</copyright>
     <projectSourceUrl>https://github.com/c80k/capnproto-dotnetcore</projectSourceUrl>
     <docsUrl>https://github.com/c80k/capnproto-dotnetcore/wiki</docsUrl>
